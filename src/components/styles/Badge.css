@@ -1,0 +1,73 @@
+
+.Badge_container {
+    background: #fff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+    border-radius: 8px 8px 8px 8px;
+    overflow: hidden;
+    height: 380px;
+}
+
+.Badge_banner {
+    padding: 0.7rem 0;
+    height: 80px;
+    background: #1b1b25;
+    display: flex;
+    justify-content: center;
+
+}
+
+.Badge_profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.Badge_profile_photo img {
+  border-radius: 50%;
+  margin: auto 2rem;
+  width: 120px;
+  height: 120px;
+}
+
+.Badge_profile_about h1 {
+    
+    font-size: 2.4rem ;
+    margin: auto 2rem;
+    text-align: center;
+}
+
+.Badge_job {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem 0;
+  background: #f4f4f7;
+}
+.Badge_job_tittle  {
+    font-weight: 400;
+    font-size: 1.8rem ;
+    margin: 1rem 2rem;
+    text-align: center;
+}
+.Badge_job_account {
+    font-weight: 300;
+    font-size: 1.4rem ;
+    margin: 0 2rem;
+    text-align: center;
+}
+
+.Badge_footer {
+    height: 54px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #98ca3f;
+    font-weight: bold;
+    font-style: italic;
+}
+.Badge_footer p {
+    font-weight: 400;
+    font-size: 1.4rem ;
+}
