@@ -1,11 +1,29 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import badgeNew_logo from "../Images/badge-header.svg";
-import Badge from "../components/Badge"
-import BadgeForm from "../components/BadgeForm"
+import Badge from "../components/Badge";
+import BadgeForm from "../components/BadgeForm";
 import "../pages/styles/BadgeNew.css";
 class BadgeNew extends React.Component {
+  state = { 
+    form: {
+      firstName: ""
+      ,LastName: ""
+      , jobTitle: ""
+      , account:""
+      ,email:""
+    },
+  };
+  handleChange = (e) => {
+    this.setState({
+      form: {
+        ...this.state.form,
+        [e.target.name]: e.target.value,
+      },
+    });
+  };
   render() {
+    const {firstName,LastName, jobTitle, account,email} = this.state.form;
     return (
       <section>
         <Navbar />
@@ -16,15 +34,17 @@ class BadgeNew extends React.Component {
           <section className="row">
             <div className="col-sm-12 col-md-6">
               <Badge
-                firstName="Juan Manuel"
-                secondName="Patiño Valencia"
-                jobTitle="TI Especialist"
-                account="Masync1"
+                firstName={firstName}
+                secondName={LastName}
+                jobTitle={jobTitle}
+                account={account}
                 avatarURL="https://cdn.wallpapersafari.com/93/75/jb2pwy.png"
               />
             </div>
             <div className="col-sm-12 col-md-6">
-              <BadgeForm/>
+              <BadgeForm
+              onChange={this.handleChange}
+              formValue={this.state.form} />
             </div>
           </section>
         </section>
