@@ -1,0 +1,65 @@
+.badge_list_item {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 20px;
+}
+
+.badge_list_item_row {
+    width: 400px;
+    padding: 15px;
+    background: #fff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+    border-radius: 8px 8px 8px 8px;
+    overflow: hidden;
+}
+
+.badge_list_item_avatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.badge_list_item_avatar img {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+}
+
+.badge_list_item_content {
+   padding: 10px;
+}
+
+.badge_list_item_content_name {
+    font-size: 2.3rem ;
+    font-weight: 700;
+    margin: auto 2rem;
+    text-align: center;
+}
+.badge_list_item_content_account {
+    color: rgb(29, 161, 242);;
+    font-weight: 300;
+    font-size: 1.4rem;
+    margin: 1rem 2rem;
+    text-align: center;
+}
+
+.badge_list_item_content-title {
+    font-weight: 700;
+    font-size: 1.6rem;
+    color: black;
+
+}
+.badge_list_item_content_jobtitle {
+    font-weight: 400;
+    font-size: 1.4rem ;
+    margin: 0 2rem;
+    text-align: center;
+}
+@media (min-width: 767px) {
+    .badge_list_item_row {
+        width: 600px
+    }  
+}
