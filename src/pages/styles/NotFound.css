@@ -1,0 +1,49 @@
+.Home {
+    background: url('../../Images/stars.svg'), #1B1B25;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    min-height:100vh;
+    padding: 2rem 0;
+    margin-bottom: 1rem;
+    color: #ffffff;
+}
+
+.Home_container_info_title {
+    text-align: center;
+    font-size: 8rem ;
+    margin: 45% 2rem 0;
+    text-transform: uppercase;
+}
+
+.Home_container_info_cotent {
+    text-align: center;
+    font-size: 2rem ;
+    margin: 1rem 2rem 1.4rem;
+}
+
+.Home_container_info .Home_container_info_button {
+    display: block;
+    font-size: 1.8rem ;
+    margin-top: 80px;
+    margin: 0 auto;
+    background-color: #7DCD40;
+    color: #ffffff;
+    width: 100px;
+    min-height: 25px;
+    align-items: center;
+}
+
+.Home_container_logo img {
+    display: block;
+    margin: 20% 20% 0 auto;
+}
+
+@media (max-width: 767px) {
+    .Home_container_logo img {
+        margin: 30px auto 0;
+        width: 370px;
+
+    }  
+}
