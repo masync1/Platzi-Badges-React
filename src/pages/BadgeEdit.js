@@ -3,33 +3,39 @@ import badgeNew_logo from "../Images/badge-header.svg";
 import Badge from "../components/Badge";
 import api from "../api"
 import BadgeForm from "../components/BadgeForm";
-import "../pages/styles/BadgeNew.css";
+import "../pages/styles/BadgeEdit.css";
 import Spinner from "../components/Spinner";
-class BadgeNew extends React.Component {
-  state = { 
-    loading: false,
-    error:null,
+
+class BadgeEdit extends React.Component {
+  state = {
+    loading: true,
+    error: null,
     form: {
-      firstName: ""
-      ,LastName: ""
-      , jobTitle: ""
-      , account:""
-      ,email:""
+      firstName: '',
+      LastName: '',
+      email: '',
+      jobTitle: '',
+      twitter: '',
     },
   };
-  handleSubmit = async(e) => {
-    e.preventDefault();
+
+  componentDidMount() {
+    this.fetchData();
+  }
+
+  fetchData = async e => {
     this.setState({ loading: true, error: null });
 
     try {
-      await api.badges.create(this.state.form);
-      this.setState({ loading: false });
-      this.props.history.push('/badges')
+      const data = await api.badges.read(this.props.match.params.id);
+
+      this.setState({ loading: false, form: data });
     } catch (error) {
-      this.setState({ loading: false, error: error });
+      this.setState({ loading: false, error });
     }
   };
-  handleChange = (e) => {
+
+  handleChange = e => {
     this.setState({
       form: {
         ...this.state.form,
@@ -37,20 +43,35 @@ class BadgeNew extends React.Component {
       },
     });
   };
+
+  handleSubmit = async e => {
+    e.preventDefault();
+    this.setState({ loading: true, error: null });
+
+    try {
+      await api.badges.update(this.props.match.params.id, this.state.form);
+      this.setState({ loading: false });
+
+      this.props.history.push('/badges');
+    } catch (error) {
+      this.setState({ loading: false, error: error });
+    }
+  };
+  
   render() {
     const {firstName,LastName, jobTitle, account,email} = this.state.form;
     if (this.state.loading) {
-      return <Spinner/>
-
+      return <Spinner />;
     }
     return (
       < React.Fragment>
-        <div className="badgeNew_hero">
+        <div className="badgeEdit_hero">
           <img className="img-fluid" src={badgeNew_logo} alt="Logo" />
         </div>
         <section className="container">
           <section className="row">
             <div className="col-sm-12 col-md-6">
+                
               <Badge
                 firstName={firstName || 'FIRSTNAME'}  
                 secondName={LastName || 'LastName'}
@@ -73,4 +94,4 @@ class BadgeNew extends React.Component {
   }
 }
 
-export default BadgeNew;
+export default BadgeEdit;

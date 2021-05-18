@@ -49,7 +49,8 @@
 @media (max-width: 767px) {
     .Home_container_logo img {
         margin: 30px auto 0;
-        width: 370px;
+        width:400px;
+        
 
     }  
 }

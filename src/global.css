@@ -40,6 +40,9 @@ body {
     background-color: #7DCD40;
     border-color: #7DCD40;
   }
+  .text-primary_spinner {
+    color: #7DCD40;
+  }
   
   .btn.btn-primary:not(:disabled):not(.disabled):hover {
     color: #fff;

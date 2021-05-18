@@ -14,8 +14,8 @@ class BadgeForm extends React.Component {
       const {firstName,LastName, jobTitle, account,email} = this.props.formValue;
     return (
       <section className="BadgeForm">
-        <h2>New Attendant</h2>
-        <form onSubmit={this.handleSubmit} className="BadgeForm_form">
+        <h2>Attendants</h2>
+        <form onSubmit={this.props.onSubmit} className="BadgeForm_form">
           <label
             htmlFor="firstName"
             className="BadgeForm_form_label form-label"
@@ -42,6 +42,7 @@ class BadgeForm extends React.Component {
             className="BadgeForm_form_input form-control"
             id="LastName"
             aria-describedby="LastName"
+            
           />
           <hr />
           <label htmlFor="email" className="BadgeForm_form_label form-label">
